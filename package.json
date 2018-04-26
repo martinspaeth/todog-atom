@@ -1,6 +1,6 @@
 {
   "name": "todog-atom",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./lib/main",
   "description": "Finds all Issue related Todos in you source  code",
   "repository": "https://github.com/martinspaeth/todog-atom",
