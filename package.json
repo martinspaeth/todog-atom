@@ -1,0 +1,118 @@
+{
+  "name": "todog-atom",
+  "version": "0.0.1",
+  "main": "./lib/main",
+  "description": "Finds all Issue related Todos in you source  code",
+  "repository": "https://github.com/martinspaeth/todog-atom",
+  "license": "MIT",
+  "engines": {
+    "atom": ">1.17.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.3",
+    "event-kit": "^2.3.0",
+    "fs-plus": "2.x",
+    "sortablejs": "^1.4.2",
+    "temp": "^0.8.3",
+    "underscore-plus": "^1.6.6"
+  },
+  "deserializers": {
+    "todog/todo-view": "deserializeTodoView"
+  },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "configSchema": {
+    "autoRefresh": {
+      "type": "boolean",
+      "default": true
+    },
+    "findTheseTodos": {
+      "description": "An array of todo types used by the search regex.",
+      "type": "array",
+      "default": [
+        "TODO",
+        "FIXME",
+        "CHANGED",
+        "XXX",
+        "IDEA",
+        "HACK",
+        "NOTE",
+        "REVIEW",
+        "NB",
+        "BUG",
+        "QUESTION",
+        "COMBAK",
+        "TEMP"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "findUsingRegex": {
+      "description": "Regex string used to find all your todos. `${TODOS}` is replaced with `FindTheseTodos` from above.",
+      "type": "string",
+      "default": "/\\b(${TODOS})[:;.,]?\\d*($|\\s.*$|[\\{\\[\\(].+$)/g"
+    },
+    "ignoreThesePaths": {
+      "description": "Similar to `.gitignore` (remember to use `/` on Mac/Linux and `\\` on Windows for subdirectories).",
+      "type": "array",
+      "default": [
+        "node_modules",
+        "vendor",
+        "bower_components",
+        "*.pdf"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "showInTable": {
+      "description": "An array of properties to show for each todo in table.",
+      "type": "array",
+      "default": [
+        "Issue",
+        "Text",
+        "Path"
+      ]
+    },
+    "sortBy": {
+      "type": "string",
+      "default": "Text",
+      "enum": [
+        "All",
+        "Issue",
+        "Text",
+        "Type",
+        "Range",
+        "Line",
+        "Regex",
+        "Path",
+        "File",
+        "Tags",
+        "Id",
+        "Project"
+      ]
+    },
+    "sortAscending": {
+      "type": "boolean",
+      "default": true
+    },
+    "exportAs": {
+      "type": "string",
+      "default": "List",
+      "enum": [
+        "List",
+        "Table"
+      ]
+    },
+    "statusBarIndicator": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

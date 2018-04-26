@@ -1,0 +1,33 @@
+'menu': [
+  'label': 'Packages'
+  'submenu': [
+    'label': 'Todog'
+    'submenu': [
+      {
+        'label': 'Find in Workspace'
+        'command': 'todog:find-in-workspace'
+      }
+      {
+        'label': 'Find in Project'
+        'command': 'todog:find-in-project'
+      }
+      {
+        'label': 'Find in Open Files'
+        'command': 'todog:find-in-open-files'
+      }
+      {
+        'label': 'Find in current'
+        'command': 'todog:find-in-active-file'
+      }
+    ]
+  ]
+]
+
+'context-menu':
+  '.show-todo-preview': [
+    {label: 'Export Todos', command: 'core:export'}
+    {label: 'Refresh Todos', command: 'core:refresh'}
+  ],
+  '.tree-view': [
+    {label: 'Search for Todos', command: 'todog:toggle'}
+  ]
