@@ -82,12 +82,6 @@ class ShowTodoView extends View
       ghostClass: 'ghost'
     )
 
-    for todo in todos = atom.config.get('todog-atom.findTheseTodos')
-      @findTodoDiv.append new CodeView(todo)
-
-    regex = atom.config.get('todog-atom.findUsingRegex')
-    @findRegexDiv.append new CodeView(regex.replace('${TODOS}', todos.join('|')))
-
     for path in atom.config.get('todog-atom.ignoreThesePaths')
       @ignorePathDiv.append new CodeView(path)
 

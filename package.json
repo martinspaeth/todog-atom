@@ -31,33 +31,6 @@
       "type": "boolean",
       "default": true
     },
-    "findTheseTodos": {
-      "description": "An array of todo types used by the search regex.",
-      "type": "array",
-      "default": [
-        "TODO",
-        "FIXME",
-        "CHANGED",
-        "XXX",
-        "IDEA",
-        "HACK",
-        "NOTE",
-        "REVIEW",
-        "NB",
-        "BUG",
-        "QUESTION",
-        "COMBAK",
-        "TEMP"
-      ],
-      "items": {
-        "type": "string"
-      }
-    },
-    "findUsingRegex": {
-      "description": "Regex string used to find all your todos. `${TODOS}` is replaced with `FindTheseTodos` from above.",
-      "type": "string",
-      "default": "/\\b(${TODOS})[:;.,]?\\d*($|\\s.*$|[\\{\\[\\(].+$)/g"
-    },
     "ignoreThesePaths": {
       "description": "Similar to `.gitignore` (remember to use `/` on Mac/Linux and `\\` on Windows for subdirectories).",
       "type": "array",
